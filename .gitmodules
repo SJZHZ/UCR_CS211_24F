@@ -1,3 +1,6 @@
 [submodule "cs211-hw1-general-matrix-multiplication-SJZHZ"]
 	path = cs211-hw1-general-matrix-multiplication-SJZHZ
 	url = https://github.com/UCR-HPC/cs211-hw1-general-matrix-multiplication-SJZHZ.git
+[submodule "cs211-hw2-solving-large-linear-system-SJZHZ"]
+	path = cs211-hw2-solving-large-linear-system-SJZHZ
+	url = https://github.com/UCR-HPC/cs211-hw2-solving-large-linear-system-SJZHZ.git
