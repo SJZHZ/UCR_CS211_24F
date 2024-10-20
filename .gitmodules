@@ -4,3 +4,6 @@
 [submodule "cs211-hw2-solving-large-linear-system-SJZHZ"]
 	path = cs211-hw2-solving-large-linear-system-SJZHZ
 	url = https://github.com/UCR-HPC/cs211-hw2-solving-large-linear-system-SJZHZ.git
+[submodule "cs211-hw2-solving-large-linear-system-private-SJZHZ"]
+	path = cs211-hw2-solving-large-linear-system-private-SJZHZ
+	url = https://github.com/UCR-HPC/cs211-hw2-solving-large-linear-system-private-SJZHZ.git
