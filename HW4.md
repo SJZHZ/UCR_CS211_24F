@@ -1,22 +1,22 @@
 # UCR-CS217-HW4: Performance Analysis
 
 ## Prerequisite
-1. Notation
+- Notation
     - Problem size: $n$
     - Number of processors: $p$
     - Fraction of potentially parallel tasks: $f,s$
     - Inherently sequential computations: $\sigma(n)$
     - Potentially parallel computations: $\phi(n)$
     - Communication operations: $\kappa(n,p)$
-2. Amdahl's Law
+- Amdahl's Law  
     $$\Psi \leq \frac{1}{(1-f)+\frac{f}{p}}$$
-3. Gustafson-Barsis' Law
+- Gustafson-Barsis' Law  
     $$\Psi \leq p+(1-p)s= s+(1-s)p$$
-4. Karp-Flatt Metric
-    $$\Psi(n,p) \leq \frac{\sigma(n)+\phi(n)}{\sigma(n)+\frac{\phi(n)}{p}+\kappa(n,p)}$$
-    - Corollary: 
+- Karp-Flatt Metric  
+    $$\Psi(n,p) \leq \frac{\sigma(n)+\phi(n)}{\sigma(n)+\frac{\phi(n)}{p}+\kappa(n,p)}$$  
+  - Corollary: 
     $$e=\frac{\frac{1}{\Psi}-\frac{1}{p}}{1-\frac{1}{p}}=f+\frac{\kappa(n,p)[\frac{p}{p-1}]}{\sigma(n)+\phi(n)}\overset{\lim_{p\to\infty}}{\approx} \frac{\sigma(n)+\kappa(n,p)}{\sigma(n)+\phi(n)}$$
-5. Isoefficiency Metric
+- Isoefficiency Metric
     $$\begin{align}
     \varepsilon 
     &= \frac{\Phi(n,p)}{p}
@@ -32,7 +32,7 @@
     $$\varepsilon\leq\frac{1}{1+\frac{T_o(n,p)}{T(n,1)}}$$  
     Assume efficiency is constant(to effectively utilize parallelism), it can be re-write as  
     $$T(n,1)\geq\frac{\varepsilon}{1-\varepsilon}T_o(n,p)=CT_o(n,p) \qquad\text{(Isoefficiency Relation)}$$
-    - Corollary: Scalability function  
+   - Corollary: Scalability function  
         The isoefficiency relation can often be simplified as $n\geq f(p)$  
         Let $M(n)$ denote memory required for problem of size $n$  
         Scalability function: $M(f(p))/p$ shows how memory usage per processor required at least to maintain same efficiency
@@ -43,13 +43,11 @@ $$\Psi \leq \frac{1}{0.05+0.95/10} = \frac{1}{0.145} \approx 6.9$$
 
 ## Q2
 Let us assume $\Psi=10$. To get the minimum number of processors, assume that other parts can be parallelized.  
-Thus $f=(1-6\%)=0.94$.  
-$$
-\Psi =10 \leq \frac{1}{(0.06 + \frac{0.94}{p})} 
-\implies 0.06 + \frac{0.94}{p} \leq \frac{1}{10}
-\implies p \geq \frac{0.94}{0.04} = 23.5
-\implies p = 24
-$$ 
+Thus $f=(1-0.06)=0.94$.  
+$$\Psi =10 \leq \frac{1}{(0.06 + \frac{0.94}{p})} 
+    \implies 0.06 + \frac{0.94}{p} \leq \frac{1}{10}
+    \implies p \geq \frac{0.94}{0.04} = 23.5
+    \implies p = 24$$ 
 
 ## Q3
 As stated in the problem, $\Psi = 50$. According to the Amdahl's Law,  
@@ -134,9 +132,9 @@ $$
 The above equation is an increasing function of $n$, so the larger $n$ is, the greater the speedup.  
 Let's check the memory usage. According to the problem statement, $M(n)=24n^2$ bytes.
 To get the maximum speedup, we have to make full use of memory(the maximum allowable $n$ can be obtained), therefore  
-$$M(n)=24n^2 \leq 1024\times 10^9 \implies n\leq \frac{128\times 10^9}{3}=16\times10^4\times\frac{\sqrt{30}}{3}\approx 292118$$  
+$$M(n)=24n^2 \leq 1024\times 2^{30} \implies n\leq \frac{128\times 2^{30}}{3}=16\times2^{15}\times\frac{\sqrt{3}}{3}\approx 302697$$  
 Thus, the maximum speedup is  
-$$\Psi(292118,1024) = 1024(1-\frac{81920}{292118+81920})\approx 800$$  
+$$\Psi(302697,1024) = 1024(\frac{302697}{302697+81920})\approx 806.6$$  
 
 Additionally,  
 $$\Psi(n,1024)=256 \leq 1024\frac{n}{n+81920} 
