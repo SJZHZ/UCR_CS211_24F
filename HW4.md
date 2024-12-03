@@ -1,31 +1,31 @@
 # UCR-CS217-HW4: Performance Analysis
 
 ## Prerequisite
-- Notation
-    - Problem size: $n$
-    - Number of processors: $p$
-    - Fraction of potentially parallel tasks: $f,s$
-    - Inherently sequential computations: $\sigma(n)$
-    - Potentially parallel computations: $\phi(n)$
-    - Communication operations: $\kappa(n,p)$
-- Amdahl's Law  
-    $$\Psi \leq \frac{1}{(1-f)+\frac{f}{p}}$$
-- Gustafson-Barsis' Law  
-    $$\Psi \leq p+(1-p)s= s+(1-s)p$$
-- Karp-Flatt Metric  
-    $$\Psi(n,p) \leq \frac{\sigma(n)+\phi(n)}{\sigma(n)+\frac{\phi(n)}{p}+\kappa(n,p)}$$  
-  - Corollary: 
+### Notation
+- Problem size: $n$
+- Number of processors: $p$
+- Fraction of potentially parallel tasks: $f,s$
+- Inherently sequential computations: $\sigma(n)$
+- Potentially parallel computations: $\phi(n)$
+- Communication operations: $\kappa(n,p)$
+### Amdahl's Law  
+$$\Psi \leq \frac{1}{(1-f)+\frac{f}{p}}$$
+### Gustafson-Barsis' Law  
+$$\Psi \leq p+(1-p)s= s+(1-s)p$$
+### Karp-Flatt Metric  
+$$\Psi(n,p) \leq \frac{\sigma(n)+\phi(n)}{\sigma(n)+\frac{\phi(n)}{p}+\kappa(n,p)}$$  
+- Corollary:  
     $$e=\frac{\frac{1}{\Psi}-\frac{1}{p}}{1-\frac{1}{p}}=f+\frac{\kappa(n,p)[\frac{p}{p-1}]}{\sigma(n)+\phi(n)}\overset{\lim_{p\to\infty}}{\approx} \frac{\sigma(n)+\kappa(n,p)}{\sigma(n)+\phi(n)}$$
-- Isoefficiency Metric  
-    $$\begin{align}
-    \varepsilon 
-    &= \frac{\Phi(n,p)}{p}
-    \leq \frac{\frac{\sigma(n)+\phi(n)}{\sigma(n)+\phi(n)/p+\kappa(n,p)}}{p} 
-    = \frac{\sigma(n)+\phi(n)}{p\sigma(n)+\phi(n)+p\kappa(n,p)}
-    \nonumber\\
-    &= \frac{\sigma(n)+\phi(n)}{\sigma(n)+\phi(n)+(p-1)\sigma(n)+p\kappa(n,p)} = \frac{1}{1+\frac{(p-1)\sigma(n)+p\kappa(n,p)}{\sigma(n)+\phi(n)}} 
-    \nonumber\\
-    \end{align}$$  
+### Isoefficiency Metric  
+$$\begin{align}
+\varepsilon 
+&= \frac{\Phi(n,p)}{p}
+\leq \frac{\frac{\sigma(n)+\phi(n)}{\sigma(n)+\phi(n)/p+\kappa(n,p)}}{p} 
+= \frac{\sigma(n)+\phi(n)}{p\sigma(n)+\phi(n)+p\kappa(n,p)}
+\nonumber\\
+&= \frac{\sigma(n)+\phi(n)}{\sigma(n)+\phi(n)+(p-1)\sigma(n)+p\kappa(n,p)} = \frac{1}{1+\frac{(p-1)\sigma(n)+p\kappa(n,p)}{\sigma(n)+\phi(n)}} 
+\nonumber\\
+\end{align}$$  
     Let 
     $$T_o(n,p)=(p-1)\sigma(n)+p\kappa(n,p), T(n,1)=\sigma(n)+\phi(n)$$ 
     then, the formula becomes  
@@ -121,11 +121,9 @@ $$g>d>a>f>b>c>e$$
 According to the problem statement, we can assume there is no time that can be only executed sequentially for matrix-matrix multiplication. Thus,  
 $$\sigma(n)=0, \phi(n)=2n^3, \kappa(n,p)=16n^2\log_2{p}, p=1024$$  
 According to the Karp-Flatt Metric  
-$$
-\Psi(n,1024) 
+$$\Psi(n,1024) 
 \leq \frac{2n^3}{\frac{2n^3}{1024}+16n^2\log_2{1024}}=\frac{n}{n+81920}\times 1024
-=1024\left(1-\frac{81920}{n+81920}\right)
-$$  
+=1024\left(1-\frac{81920}{n+81920}\right)$$  
 The above equation is an increasing function of $n$, so the larger $n$ is, the greater the speedup.  
 Let's check the memory usage. According to the problem statement, $M(n)=24n^2$ bytes.
 To get the maximum speedup, we have to make full use of memory(the maximum allowable $n$ can be obtained), therefore  
