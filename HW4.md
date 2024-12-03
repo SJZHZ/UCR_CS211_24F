@@ -1,22 +1,22 @@
 # UCR-CS217-HW4: Performance Analysis
 
 ## Prerequisite
-- Notation
+1. Notation
     - Problem size: $n$
     - Number of processors: $p$
     - Fraction of potentially parallel tasks: $f,s$
     - Inherently sequential computations: $\sigma(n)$
     - Potentially parallel computations: $\phi(n)$
     - Communication operations: $\kappa(n,p)$
-- Amdahl's Law
+2. Amdahl's Law
     $$\Psi \leq \frac{1}{(1-f)+\frac{f}{p}}$$
-- Gustafson-Barsis' Law
+3. Gustafson-Barsis' Law
     $$\Psi \leq p+(1-p)s= s+(1-s)p$$
-- Karp-Flatt Metric
-- Karp-Flatt Metric
+4. Karp-Flatt Metric
     $$\Psi(n,p) \leq \frac{\sigma(n)+\phi(n)}{\sigma(n)+\frac{\phi(n)}{p}+\kappa(n,p)}$$
-    - Corollary: $e=\frac{\frac{1}{\Psi}-\frac{1}{p}}{1-\frac{1}{p}}=f+\frac{\kappa(n,p)[\frac{p}{p-1}]}{\sigma(n)+\phi(n)}\overset{\lim_{p\to\infty}}{\approx} \frac{\sigma(n)+\kappa(n,p)}{\sigma(n)+\phi(n)}$
-- Isoefficiency Metric
+    - Corollary: 
+    $$e=\frac{\frac{1}{\Psi}-\frac{1}{p}}{1-\frac{1}{p}}=f+\frac{\kappa(n,p)[\frac{p}{p-1}]}{\sigma(n)+\phi(n)}\overset{\lim_{p\to\infty}}{\approx} \frac{\sigma(n)+\kappa(n,p)}{\sigma(n)+\phi(n)}$$
+5. Isoefficiency Metric
     $$\begin{align}
     \varepsilon 
     &= \frac{\Phi(n,p)}{p}
@@ -45,11 +45,10 @@ $$\Psi \leq \frac{1}{0.05+0.95/10} = \frac{1}{0.145} \approx 6.9$$
 Let us assume $\Psi=10$. To get the minimum number of processors, assume that other parts can be parallelized.  
 Thus $f=(1-6\%)=0.94$.  
 $$
-    \Psi =10 \leq \frac{1}{(0.06 + \frac{0.94}{p})} 
-    \implies 0.06 + \frac{0.94}{p} \leq \frac{1}{10} 
-    \implies \frac{0.94}{p} \leq 0.04 
-    \implies p \geq \frac{0.94}{0.04} = 23.5
-    \implies p = 24
+\Psi =10 \leq \frac{1}{(0.06 + \frac{0.94}{p})} 
+\implies 0.06 + \frac{0.94}{p} \leq \frac{1}{10}
+\implies p \geq \frac{0.94}{0.04} = 23.5
+\implies p = 24
 $$ 
 
 ## Q3
