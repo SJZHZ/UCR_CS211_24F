@@ -13,6 +13,7 @@
 - Gustafson-Barsis' Law
     $$\Psi \leq p+(1-p)s= s+(1-s)p$$
 - Karp-Flatt Metric
+- Karp-Flatt Metric
     $$\Psi(n,p) \leq \frac{\sigma(n)+\phi(n)}{\sigma(n)+\frac{\phi(n)}{p}+\kappa(n,p)}$$
     - Corollary: $e=\frac{\frac{1}{\Psi}-\frac{1}{p}}{1-\frac{1}{p}}=f+\frac{\kappa(n,p)[\frac{p}{p-1}]}{\sigma(n)+\phi(n)}\overset{\lim_{p\to\infty}}{\approx} \frac{\sigma(n)+\kappa(n,p)}{\sigma(n)+\phi(n)}$
 - Isoefficiency Metric
