@@ -16,7 +16,7 @@
     $$\Psi(n,p) \leq \frac{\sigma(n)+\phi(n)}{\sigma(n)+\frac{\phi(n)}{p}+\kappa(n,p)}$$  
   - Corollary: 
     $$e=\frac{\frac{1}{\Psi}-\frac{1}{p}}{1-\frac{1}{p}}=f+\frac{\kappa(n,p)[\frac{p}{p-1}]}{\sigma(n)+\phi(n)}\overset{\lim_{p\to\infty}}{\approx} \frac{\sigma(n)+\kappa(n,p)}{\sigma(n)+\phi(n)}$$
-- Isoefficiency Metric
+- Isoefficiency Metric  
     $$\begin{align}
     \varepsilon 
     &= \frac{\Phi(n,p)}{p}
@@ -122,12 +122,9 @@ According to the problem statement, we can assume there is no time that can be o
 $$\sigma(n)=0, \phi(n)=2n^3, \kappa(n,p)=16n^2\log_2{p}, p=1024$$  
 According to the Karp-Flatt Metric  
 $$
-\begin{align}
 \Psi(n,1024) 
-&\leq \frac{2n^3}{\frac{2n^3}{1024}+16n^2\log_2{1024}}=\frac{n}{n+81920}\times 1024
+\leq \frac{2n^3}{\frac{2n^3}{1024}+16n^2\log_2{1024}}=\frac{n}{n+81920}\times 1024
 =1024\left(1-\frac{81920}{n+81920}\right)
-\nonumber\\
-\end{align}
 $$  
 The above equation is an increasing function of $n$, so the larger $n$ is, the greater the speedup.  
 Let's check the memory usage. According to the problem statement, $M(n)=24n^2$ bytes.
