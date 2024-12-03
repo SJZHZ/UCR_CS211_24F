@@ -59,9 +59,7 @@ $$\Psi = 50 \leq \frac{1}{f+\frac{1-f}{p}} < \frac{1}{f}, f \neq 0
 
 ## Q4
 According to the problem statement, $\Psi=9, p=10$. According to the Amdahl's Law,  
-$$
-\Psi = 9 \leq \frac{1}{f+\frac{1-f}{10}} \implies f+\frac{1-f}{10} \leq \frac{1}{9} \implies \frac{9}{10}f \leq \frac{1}{90} \implies f \leq \frac{1}{81}
-$$
+$$\Psi = 9 \leq \frac{1}{f+\frac{1-f}{10}} \implies f+\frac{1-f}{10} \leq \frac{1}{9} \implies \frac{9}{10}f \leq \frac{1}{90} \implies f \leq \frac{1}{81}$$
 
 ## Q5
 According to the problem statement, $p=16, t_{parallel}=233, t{sequential}=9, t_{total}=242$.  
