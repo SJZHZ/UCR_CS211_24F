@@ -101,21 +101,21 @@ $$t_t(16)=t_s+t_p(16)=\frac{1000}{3}+\frac{\frac{2000}{3}}{16}=\frac{1125}{3}=37
 ## Q9
 According to the Isoefficiency Metric and the Scalability function,  
 a. 
-$$n\geq f(p)=Cp, M(n)=n^2 \implies M(f(p))/p=C^2p$$  
+$n\geq f(p)=Cp, M(n)=n^2 \implies M(f(p))/p=C^2p$  
 b. 
-$$n\geq f(p)=C\sqrt{p}\log{p}, M(n)=n^2 \implies M(f(p))/p=C^2\log^2{p}$$  
+$n\geq f(p)=C\sqrt{p}\log{p}, M(n)=n^2 \implies M(f(p))/p=C^2\log^2{p}$  
 c. 
-$$n\geq f(p)=C\sqrt{p}, M(n)=n^2 \implies M(f(p))/p=C^2$$  
+$n\geq f(p)=C\sqrt{p}, M(n)=n^2 \implies M(f(p))/p=C^2$  
 d. 
-$$n\geq f(p)=Cp\log{p}, M(n)=n^2 \implies M(f(p))/p=C^2p\log^2{p}$$  
+$n\geq f(p)=Cp\log{p}, M(n)=n^2 \implies M(f(p))/p=C^2p\log^2{p}$  
 e. 
-$$n\geq f(p)=Cp, M(n)=n \implies M(f(p))/p=C$$  
+$n\geq f(p)=Cp, M(n)=n \implies M(f(p))/p=C$  
 f.
-$$n\geq f(p)=p^c, M(n)=n \implies M(f(p))/p=p^{c-1} \quad where\space 1<C<2$$  
+$n\geq f(p)=p^c, M(n)=n \implies M(f(p))/p=p^{c-1} \quad where\space 1<C<2$  
 g.
-$$n\geq f(p)=p^c, M(n)=n \implies M(f(p))/p=p^{c-1} \quad where\space C>2$$  
+$n\geq f(p)=p^c, M(n)=n \implies M(f(p))/p=p^{c-1} \quad where\space C>2$  
 Thus,  
-$$g>d>a>f>b>c>e$$
+$g>d>a>f>b>c>e$
 
 ## Q10
 According to the problem statement, we can assume there is no time that can be only executed sequentially for matrix-matrix multiplication. Thus,  
