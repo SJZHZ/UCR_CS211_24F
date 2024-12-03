@@ -26,12 +26,12 @@ $$\begin{align}
 &= \frac{\sigma(n)+\phi(n)}{\sigma(n)+\phi(n)+(p-1)\sigma(n)+p\kappa(n,p)} = \frac{1}{1+\frac{(p-1)\sigma(n)+p\kappa(n,p)}{\sigma(n)+\phi(n)}} 
 \nonumber\\
 \end{align}$$  
-    Let 
-    $$T_o(n,p)=(p-1)\sigma(n)+p\kappa(n,p), T(n,1)=\sigma(n)+\phi(n)$$ 
-    then, the formula becomes  
-    $$\varepsilon\leq\frac{1}{1+\frac{T_o(n,p)}{T(n,1)}}$$  
-    Assume efficiency is constant(to effectively utilize parallelism), it can be re-write as  
-    $$T(n,1)\geq\frac{\varepsilon}{1-\varepsilon}T_o(n,p)=CT_o(n,p) \qquad\text{(Isoefficiency Relation)}$$
+Let 
+$$T_o(n,p)=(p-1)\sigma(n)+p\kappa(n,p), T(n,1)=\sigma(n)+\phi(n)$$ 
+then, the formula becomes  
+$$\varepsilon\leq\frac{1}{1+\frac{T_o(n,p)}{T(n,1)}}$$  
+Assume efficiency is constant(to effectively utilize parallelism), it can be re-write as  
+$$T(n,1)\geq\frac{\varepsilon}{1-\varepsilon}T_o(n,p)=CT_o(n,p) \qquad\text{(Isoefficiency Relation)}$$
    - Corollary: Scalability function  
         The isoefficiency relation can often be simplified as $n\geq f(p)$  
         Let $M(n)$ denote memory required for problem of size $n$  
