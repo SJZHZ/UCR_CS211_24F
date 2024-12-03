@@ -1,5 +1,8 @@
 # UCR-CS217-HW4: Performance Analysis
-
+## Infomation
+- Name: Yue Zhu
+- SID: 862547137
+- eMail: yzhu303@ucr.edu
 ## Prerequisite
 ### Notation
 - Problem size: $n$
